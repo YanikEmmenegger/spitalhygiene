@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome to our website!",
+  "disclaimer": {
+    "title": "Disclaimer",
+    "text": "Die Informationen, die von diesem Chatbot bereitgestellt werden, dienen ausschließlich zu Informationszwecken. Der Chatbot ist ein automatisiertes System und bietet Antworten basierend auf den eingegebenen Fragen und den verfügbaren Daten.\n\nBitte beachten Sie die folgenden Punkte:\n\nKeine professionelle Beratung: Die Informationen des Chatbots ersetzen keine professionelle Beratung, sei es rechtlicher, medizinischer, finanzieller oder anderer Art. Bei spezifischen Anliegen sollten Sie sich an qualifizierte Fachkräfte wenden.\n\nKeine Gewährleistung: Obwohl wir uns bemühen, genaue und aktuelle Informationen bereitzustellen, können wir keine Gewähr für die Vollständigkeit, Richtigkeit oder Aktualität der bereitgestellten Inhalte übernehmen.\n\nNutzung auf eigenes Risiko: Die Nutzung der Informationen und Antworten, die Sie von diesem Chatbot erhalten, erfolgt auf eigenes Risiko. Wir haften nicht für Verluste oder Schäden, die aus der Nutzung oder dem Vertrauen auf die bereitgestellten Informationen entstehen.\n\nDatenschutz: Bitte beachten Sie, dass persönliche Daten, die Sie in den Chat eingeben, möglicherweise gespeichert oder verarbeitet werden. Lesen Sie unsere Datenschutzrichtlinien, um mehr über den Umgang mit Ihren Daten zu erfahren.\n\nDurch die Nutzung dieses Chatbots stimmen Sie diesen Bedingungen zu.",
+    "accept": "OK"
+  }
+}
