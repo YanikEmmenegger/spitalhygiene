@@ -1,16 +1,14 @@
-
-const Header: React.FC = () => {
+const Header = () => {
     return (
-        <header className="bg-white shadow-md h-16 p-3"> {/* Set a fixed height for the header */}
-            <div className="container mx-auto flex items-center h-full"> {/* Use h-full to vertically center the contents */}
+        <header className="bg-white shadow-md h-16 p-3"> {/* Set fixed header height */}
+            <div className="container mx-auto flex items-center h-full"> {/* Vertically center contents */}
                 <div className="flex-1 flex justify-center">
                     <img
                         src="/Logo.svg"
-                        alt="Logo Inselspital"
+                        alt="Inselspital Logo"
                         className="h-12 w-auto"
                     />
                 </div>
-
             </div>
         </header>
     );

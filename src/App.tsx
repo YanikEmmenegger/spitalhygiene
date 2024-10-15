@@ -1,10 +1,10 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 import EmbeddedApp from "./components/EmbeddedApp.tsx";
-import LogoHeader from "./components/Header.tsx";
 import Disclaimer from "./components/Disclaimer.tsx";
 import Navigation from "./components/Navigation.tsx";
 import NavigationButton from "./components/NavigationButton.tsx";
+import Header from "./components/Header.tsx";
 
 function App() {
     // State for toggling navigation visibility
@@ -49,7 +49,7 @@ function App() {
             {/* Main container: flex layout with full screen height */}
             <div className="flex flex-col h-screen">
                 {/* Logo/Header component */}
-                <LogoHeader/>
+                <Header/>
 
                 <div className="flex flex-1 w-full overflow-hidden relative">
                     {/* Main Content: Adjusts width based on navigation visibility */}
