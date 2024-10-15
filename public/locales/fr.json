@@ -1,7 +1,25 @@
 {
-  "welcome": "Bienvenue auf der website!",
+  "welcome": "Bienvenue sur le site web!",
   "disclaimer": {
-    "title": "Disclaimer",
-    "text": "Disclaimer Text here.",
-    "accept": "OK"
-  }}
+    "title": "Avertissement - Français",
+    "text": "Les informations fournies par ce chatbot sont à titre informatif uniquement. Le chatbot est un système automatisé et fournit des réponses basées sur les questions saisies et les données disponibles.\n\nVeuillez noter les points suivants :\n\nPas de conseil professionnel : Les informations du chatbot ne remplacent pas les conseils professionnels, qu'ils soient juridiques, médicaux, financiers ou autres. Pour des préoccupations spécifiques, vous devez consulter des professionnels qualifiés.\n\nAucune garantie : Bien que nous nous efforcions de fournir des informations exactes et à jour, nous ne pouvons garantir l'exhaustivité, l'exactitude ou l'actualité du contenu fourni.\n\nUtilisation à vos risques et périls : L'utilisation des informations et des réponses que vous recevez de ce chatbot se fait à vos risques et périls. Nous ne sommes pas responsables des pertes ou dommages résultant de l'utilisation ou de la confiance accordée aux informations fournies.\n\nConfidentialité : Veuillez noter que les données personnelles que vous saisissez dans le chat peuvent être stockées ou traitées. Lisez notre politique de confidentialité pour en savoir plus sur la façon dont nous gérons vos données.\n\nEn utilisant ce chatbot, vous acceptez ces conditions.",
+    "accept": "Compris!"
+  },
+  "navigation": {
+    "title": "Liens utiles",
+    "links": [
+      {
+        "title": "Hygiène hospitalière",
+        "link": "https://infektiologie.insel.ch/fr/a-propos-de-nous/hygiene-hospitaliere/"
+      },
+      {
+        "title": "Dossier d'hygiène",
+        "link": "https://qm.insel.ch/dossier-hygiene/"
+      },
+      {
+        "title": "Contact",
+        "link": "mailto:hygienehospitaliere@insel.ch"
+      }
+    ]
+  }
+}

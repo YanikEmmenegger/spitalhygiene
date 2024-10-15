@@ -15,10 +15,10 @@ const LanguageButton: React.FC<LanguageButtonProps> = ({
     return (
         <button
             onClick={onClick} // Call onClick directly
-            className={`px-4 py-2 rounded transition-colors ${
+            className={`px-4 py-2 rounded-lg transition-colors ${
                 isSelected
-                    ? 'bg-gray-300 text-gray-800'
-                    : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    ? 'bg-lightGreen text-white'
+                    : 'text-lightGray hover:bg-DarkGreen hover:text-white'
             }`}
         >
             {language}
