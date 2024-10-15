@@ -32,7 +32,7 @@ i18n
         fallbackLng: 'de',
         supportedLngs: supportedLanguages,
         backend: {
-            loadPath: '/locales/{{lng}}.json',
+            loadPath: 'locales/{{lng}}.json',
         },
         interpolation: {
             escapeValue: false, // React already escapes by default

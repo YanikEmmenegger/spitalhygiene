@@ -1,5 +1,5 @@
 {
-  "welcome": "Welcome to the website!",
+  "loading": "Loading application...",
   "disclaimer": {
     "title": "Disclaimer - English",
     "text": "The information provided by this chatbot is for informational purposes only. The chatbot is an automated system and provides responses based on the entered questions and available data.\n\nPlease note the following points:\n\nNo professional advice: The information from the chatbot does not replace professional advice, be it legal, medical, financial, or otherwise. For specific concerns, you should consult qualified professionals.\n\nNo warranty: While we strive to provide accurate and up-to-date information, we cannot guarantee the completeness, accuracy, or timeliness of the provided content.\n\nUse at your own risk: The use of the information and responses you receive from this chatbot is at your own risk. We are not liable for any losses or damages arising from the use or reliance on the provided information.\n\nPrivacy: Please note that personal data you enter in the chat may be stored or processed. Read our privacy policy to learn more about how we handle your data.\n\nBy using this chatbot, you agree to these terms.",
@@ -10,7 +10,7 @@
     "links": [
       {
         "title": "About Us - Hospital Hygiene",
-        "link": "https://infektiologie.insel.ch/en/about-us/hospital-hygiene/"
+        "link": "https://infektiologie.insel.ch/de/ueber-uns/spitalhygiene"
       },
       {
         "title": "Hygiene Folder",

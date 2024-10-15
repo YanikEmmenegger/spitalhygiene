@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+// Update the base path to your deployment path
 export default defineConfig({
-  plugins: [react()],
-})
+    plugins: [react()],
+    base: '/chat/', // Set the base path for your application
+});

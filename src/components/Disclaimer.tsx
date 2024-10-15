@@ -24,15 +24,15 @@ const Disclaimer: React.FC = () => {
     if (!isVisible) return null; // Don't render the disclaimer if cookie exists
 
     return (
-        <div className="w-full flex justify-center items-center h-screen fixed top-0 left-0 backdrop-blur-md z-50">
+        <div className="w-full flex overflow-auto justify-center items-center h-screen fixed top-0 left-0 backdrop-blur-md z-50">
             {/* Language Switcher positioned at the bottom left on small screens */}
-            <div className="fixed left-6 bottom-6 md:right-6 md:left-auto">
+            <div className="fixed left-6 bottom-20 md:right-6 md:left-auto">
                 <LanguageSwitcher/>
             </div>
 
             {/* Main Disclaimer Box */}
             <div
-                className="bg-white p-6 flex flex-col justify-between w-full h-screen md:h-auto md:w-3/4 shadow-2xl rounded-lg">
+                className="bg-white px-6 py-20 flex flex-col justify-between w-full h-screen md:h-auto md:w-3/4 shadow-2xl rounded-lg">
                 <div>
                     <h1 className="text-lg md:text-xl font-bold mb-4">{t('disclaimer.title')}</h1>
                     <p className="text-xs md:text-lg mb-4">{t('disclaimer.text')}</p>
