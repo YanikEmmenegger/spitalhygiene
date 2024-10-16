@@ -29,11 +29,11 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
             )}
         >
             <motion.div
-                className="p-4 flex flex-col justify-between h-full"
+                className="p-4 flex flex-col overflow-scroll justify-between h-full"
                 animate={{opacity: isNavVisible ? 1 : 0}} // Fade in/out based on visibility
-                transition={{delay: 0.1}}
+                transition={{delay: 0.2}}
             >
-                <div className="ml-10 mt-20 lg:text-left">
+                <div className={twMerge("ml-10 mt-20 lg:text-left", isNavVisible ? "opacity-100": "opacity-0")}>
                     <h2 className="text-3xl mb-5 font-bold">
                         {t('navigation.title')} {/* Navigation title from translation */}
                     </h2>
@@ -47,6 +47,9 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
                             t('navigation.links', {returnObjects: true}).map((link, index) => (
                                 <NavigationLink key={index} href={link.link} text={link.title}/>
                             ))}
+                        <div className={"mt-5 border-t-[1px] pt-5 mr-10"}>
+                            {t('navigation.text')}
+                        </div>
                     </div>
 
                     {/* Toggle button only visible on small screens */}

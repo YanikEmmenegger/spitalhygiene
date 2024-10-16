@@ -6,6 +6,7 @@
     "accept": "Verstanden!"
   },
   "navigation": {
+    "text": "Dies hier ist einfach eine kleine Beschreibung, hier könnte was stehen für was der ChatBot ist und für was nicht, Dies hier ist einfach eine kleine Beschreibung, hier könnte was stehen für was der ChatBot ist und für was nicht, Dies hier ist einfach eine kleine Beschreibung, hier könnte was stehen für was der ChatBot ist und für was nicht, Dies hier ist einfach eine kleine Beschreibung, hier könnte was stehen für was der ChatBot ist und für was nicht",
     "title": "Nützliche Links",
     "links": [
       {
@@ -19,6 +20,10 @@
       {
         "title": "Kontakt",
         "link": "mailto:spitalhygiene@insel.ch"
+      },
+      {
+        "title": "Datenschutz",
+        "link": "https://qm.insel.ch/hygieneordner/"
       }
     ]
   }

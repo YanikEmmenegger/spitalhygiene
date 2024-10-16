@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
 
 // List of supported languages
-const supportedLanguages = ['de', 'fr', 'en', 'it'];
+const supportedLanguages = ['de', 'fr', 'en'];
 
 // Check local storage for saved language
 const storedLanguage = localStorage.getItem('language');

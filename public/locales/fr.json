@@ -1,24 +1,29 @@
 {
   "loading": "Chargement de l'application...",
   "disclaimer": {
-    "title": "Avertissement - Français",
-    "text": "Les informations fournies par ce chatbot sont à titre informatif uniquement. Le chatbot est un système automatisé et fournit des réponses basées sur les questions saisies et les données disponibles.\n\nVeuillez noter les points suivants :\n\nPas de conseil professionnel : Les informations du chatbot ne remplacent pas les conseils professionnels, qu'ils soient juridiques, médicaux, financiers ou autres. Pour des préoccupations spécifiques, vous devez consulter des professionnels qualifiés.\n\nAucune garantie : Bien que nous nous efforcions de fournir des informations exactes et à jour, nous ne pouvons garantir l'exhaustivité, l'exactitude ou l'actualité du contenu fourni.\n\nUtilisation à vos risques et périls : L'utilisation des informations et des réponses que vous recevez de ce chatbot se fait à vos risques et périls. Nous ne sommes pas responsables des pertes ou dommages résultant de l'utilisation ou de la confiance accordée aux informations fournies.\n\nConfidentialité : Veuillez noter que les données personnelles que vous saisissez dans le chat peuvent être stockées ou traitées. Lisez notre politique de confidentialité pour en savoir plus sur la façon dont nous gérons vos données.\n\nEn utilisant ce chatbot, vous acceptez ces conditions.",
-    "accept": "Compris!"
+    "title": "Clause de non-responsabilité - Français",
+    "text": "Les informations fournies par ce chatbot sont à titre informatif uniquement. Le chatbot est un système automatisé et fournit des réponses basées sur les questions saisies et les données disponibles.\n\nVeuillez noter les points suivants :\n\nPas de conseil professionnel : Les informations fournies par le chatbot ne remplacent pas un conseil professionnel, qu'il soit juridique, médical, financier ou autre. Pour des préoccupations spécifiques, vous devriez consulter des professionnels qualifiés.\n\nPas de garantie : Bien que nous nous efforcions de fournir des informations exactes et à jour, nous ne pouvons garantir l'exhaustivité, l'exactitude ou l'actualité des informations fournies.\n\nUtilisation à vos risques : L'utilisation des informations et des réponses que vous recevez de ce chatbot se fait à vos propres risques. Nous ne sommes pas responsables des pertes ou des dommages résultant de l'utilisation ou de la confiance accordée aux informations fournies.\n\nConfidentialité : Veuillez noter que les données personnelles que vous saisissez dans le chat peuvent être enregistrées ou traitées. Lisez notre politique de confidentialité pour en savoir plus sur la manière dont nous traitons vos données.\n\nEn utilisant ce chatbot, vous acceptez ces conditions.",
+    "accept": "Compris !"
   },
   "navigation": {
+    "text": "Il s'agit simplement d'une petite description, ici vous pouvez indiquer à quoi sert le chatbot et à quoi il ne sert pas. Il s'agit simplement d'une petite description, ici vous pouvez indiquer à quoi sert le chatbot et à quoi il ne sert pas. Il s'agit simplement d'une petite description, ici vous pouvez indiquer à quoi sert le chatbot et à quoi il ne sert pas. Il s'agit simplement d'une petite description, ici vous pouvez indiquer à quoi sert le chatbot et à quoi il ne sert pas.",
     "title": "Liens utiles",
     "links": [
       {
-        "title": "Hygiène hospitalière",
+        "title": "À propos de nous - Hygiène hospitalière",
         "link": "https://infektiologie.insel.ch/de/ueber-uns/spitalhygiene"
       },
       {
         "title": "Dossier d'hygiène",
-        "link": "https://qm.insel.ch/dossier-hygiene/"
+        "link": "https://qm.insel.ch/hygieneordner/"
       },
       {
         "title": "Contact",
-        "link": "mailto:hygienehospitaliere@insel.ch"
+        "link": "mailto:spitalhygiene@insel.ch"
+      },
+      {
+        "title": "Politique de confidentialité",
+        "link": "https://qm.insel.ch/hygieneordner/"
       }
     ]
   }
