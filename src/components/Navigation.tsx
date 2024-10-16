@@ -25,7 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
             transition={{duration: 0.3}}
             className={twMerge(
                 "h-full absolute bg-white lg:bg-transparent lg:relative right-0 top-0 flex flex-col overflow-hidden",
-                isNavVisible ? 'block border-l-[1px] border-t-2 lg:border-t-0' : 'hidden lg:block' // Handle visibility for mobile and desktop
+                isNavVisible ? 'block border-l-[1px]' : 'hidden lg:block' // Handle visibility for mobile and desktop
             )}
         >
             <motion.div

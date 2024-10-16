@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <header className="bg-white shadow-md h-16 p-3"> {/* Set fixed header height */}
+        <header className="bg-white sha dow-md h-16 p-3"> {/* Set fixed header height */}
             <div className="container mx-auto flex items-center h-full"> {/* Vertically center contents */}
                 <div className="flex-1 flex justify-center">
                     <img
