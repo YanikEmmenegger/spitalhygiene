@@ -34,7 +34,7 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
                 transition={{delay: 0.2}}
             >
                 <div className={twMerge("ml-10 mt-20 lg:text-left", isNavVisible ? "opacity-100": "opacity-0")}>
-                    <h2 className="text-3xl mb-5 font-bold">
+                    <h2 className="text-3xl mb-5 text-lightGray font-bold">
                         {t('navigation.title')} {/* Navigation title from translation */}
                     </h2>
 
@@ -47,7 +47,7 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
                             t('navigation.links', {returnObjects: true}).map((link, index) => (
                                 <NavigationLink key={index} href={link.link} text={link.title}/>
                             ))}
-                        <div className={"mt-5 border-t-[1px] pt-5 mr-10"}>
+                        <div className={"mt-5 text-lightGray border-t-[1px] pt-5 mr-10"}>
                             {t('navigation.text')}
                         </div>
                     </div>

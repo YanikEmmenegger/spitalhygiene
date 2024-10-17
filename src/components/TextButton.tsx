@@ -12,7 +12,7 @@ interface TextButtonProps {
 const TextButton: React.FC<TextButtonProps> = ({text, onClick, className, red}) => {
     return (
         <button onClick={onClick}
-                className={twMerge(className, "text-white rounded-lg px-4 py-2", red ? "bg-lightRed" : "bg-lightGreen")}>
+                className={twMerge(className, "text-white transition-colors rounded-lg px-4 py-2", red ? "bg-lightRed hover:bg-darkRed" : "bg-lightGreen hover:bg-DarkGreen")}>
             {text}
         </button>
     );

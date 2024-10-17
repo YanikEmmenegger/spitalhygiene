@@ -1,27 +1,29 @@
-// src/i18n.ts
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
+import Cookies from 'js-cookie';
 
 // List of supported languages
 const supportedLanguages = ['de', 'fr', 'en'];
 
-// Check local storage for saved language
-const storedLanguage = localStorage.getItem('language');
+// Check cookies for saved language
+const storedLanguage = Cookies.get('language');
 
 // Determine the default language
 let lng;
 
 if (storedLanguage) {
-    // Use saved language from local storage if available
+    // Use saved language from cookies if available
     lng = storedLanguage;
 } else {
     // Detect the user's browser or device language
-    const userLanguage = navigator.language || navigator.languages[0];
-    const languageCode = userLanguage.split('-')[0];
+    // const userLanguage = navigator.language || navigator.languages[0];
+    // const languageCode = userLanguage.split('-')[0];
 
     // Set default language to German ('de') if the user's language is not supported
-    lng = supportedLanguages.includes(languageCode) ? languageCode : 'de';
+    //  lng = supportedLanguages.includes(languageCode) ? languageCode : 'de';
+
+    lng = 'de'; // Set default language to German ('de')
 }
 
 i18n
@@ -39,9 +41,9 @@ i18n
         },
     });
 
-// Store language in local storage whenever it changes
+// Store language in cookies whenever it changes
 i18n.on('languageChanged', (lng) => {
-    localStorage.setItem('language', lng);
+    Cookies.set('language', lng, {expires: 365}); // Set cookie to expire in 1 year
 });
 
 export default i18n;

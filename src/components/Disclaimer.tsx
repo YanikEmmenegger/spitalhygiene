@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next';
 import TextButton from "./TextButton.tsx";
 import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import {motion} from 'framer-motion';
+import Cookies from 'js-cookie'; // Import js-cookie
 
 const Disclaimer: React.FC = () => {
     const {t} = useTranslation();
@@ -11,17 +12,18 @@ const Disclaimer: React.FC = () => {
 
     // Check if disclaimer cookie exists and hide disclaimer if it does
     useEffect(() => {
-        const cookieExists = document.cookie.split(';').some(cookie => cookie.trim().startsWith('disclaimerAccepted='));
+        const cookieExists = Cookies.get('disclaimerAccepted'); // Use js-cookie to check if cookie exists
         setIsVisible(!cookieExists); // Show disclaimer if no cookie is found
     }, []);
 
     // Handle the acceptance of the disclaimer and set a 30-day cookie
     const handleAccept = () => {
+        // Set cookie using js-cookie with 30-day expiration
+        Cookies.set('disclaimerAccepted', 'true', {expires: 30, path: '/'});
         setIsFadingOut(true); // Trigger fade-out animation
+
+        // Set a timeout to hide the disclaimer after animation
         setTimeout(() => {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + 30 * 24 * 60 * 60 * 1000); // Set expiration for 30 days
-            document.cookie = `disclaimerAccepted=true; expires=${expires.toUTCString()}; path=/`; // Set cookie
             setIsVisible(false); // Hide disclaimer after animation
         }, 500); // Delay for the fade-out animation duration
     };
@@ -45,8 +47,8 @@ const Disclaimer: React.FC = () => {
                 className="bg-white px-6 pb-20 md:pb-5 pt-5 flex flex-col justify-between w-full h-screen md:h-auto md:w-3/4 shadow-2xl rounded-lg"
             >
                 <div>
-                    <h1 className="text-lg md:text-xl font-bold mb-4">{t('disclaimer.title')}</h1>
-                    <p className="text-xs md:text-lg mb-4">{t('disclaimer.text')}</p>
+                    <h1 className="text-lg md:text-xl text-lightGray font-bold mb-4">{t('disclaimer.title')}</h1>
+                    <p className="text-xs md:text-lg text-lightGray mb-4">{t('disclaimer.text')}</p>
                 </div>
 
                 {/* Accept Button */}

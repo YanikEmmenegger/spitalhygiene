@@ -8,7 +8,7 @@ interface NavigationLinkProps {
 
 const NavigationLink: FC<NavigationLinkProps> = ({href, text}) => {
     return (
-        <div className="flex flex-row items-center gap-1">
+        <div className="flex flex-row items-center gap-2">
             {/* Show external link icon only on large screens */}
             <GoLinkExternal className="hidden lg:block"/>
             <a
