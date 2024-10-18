@@ -43,9 +43,14 @@ const LoginForm = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-                <h2 className="text-2xl font-bold text-center text-gray-700 mb-5">
+        <div className="flex flex-col gap-10 items-center justify-center min-h-screen bg-gray-100">
+            <img
+                src="Logo.svg" // Just use the path without /chat
+                alt="Inselspital Logo"
+                className="h-12 w-auto"
+            />
+            <div className="bg-transparent md:bg-white p-8 rounded-lg md:shadow-lg max-w-md w-full">
+                <h2 className="text-2xl font-bold md:text-center text-gray-700 mb-5">
                     {t("login.title")}
                 </h2>
                 <form onSubmit={handleSubmit}>
