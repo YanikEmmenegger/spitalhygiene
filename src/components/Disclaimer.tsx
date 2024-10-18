@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import TextButton from "./TextButton.tsx";
-import LanguageSwitcher from "./LanguageSwitcher.tsx";
+import TextButton from './TextButton.tsx';
+import LanguageSwitcher from './LanguageSwitcher.tsx';
 import {motion} from 'framer-motion';
 import Cookies from 'js-cookie'; // Import js-cookie
 
@@ -12,20 +12,19 @@ const Disclaimer: React.FC = () => {
 
     // Check if disclaimer cookie exists and hide disclaimer if it does
     useEffect(() => {
-        const cookieExists = Cookies.get('disclaimerAccepted'); // Use js-cookie to check if cookie exists
+        const cookieExists = Cookies.get('disclaimerAccepted');
         setIsVisible(!cookieExists); // Show disclaimer if no cookie is found
     }, []);
 
     // Handle the acceptance of the disclaimer and set a 30-day cookie
     const handleAccept = () => {
-        // Set cookie using js-cookie with 30-day expiration
         Cookies.set('disclaimerAccepted', 'true', {expires: 30, path: '/'});
         setIsFadingOut(true); // Trigger fade-out animation
 
-        // Set a timeout to hide the disclaimer after animation
+        // Hide disclaimer after animation
         setTimeout(() => {
-            setIsVisible(false); // Hide disclaimer after animation
-        }, 500); // Delay for the fade-out animation duration
+            setIsVisible(false);
+        }, 500);
     };
 
     if (!isVisible) return null; // Don't render the disclaimer if cookie exists
@@ -35,25 +34,26 @@ const Disclaimer: React.FC = () => {
             initial={{opacity: 1}}
             animate={{opacity: isFadingOut ? 0 : 1}}
             transition={{duration: 0.3}}
-            className="w-full flex overflow-auto justify-center md:items-start md:pt-10 h-screen fixed top-0 left-0 backdrop-blur-lg z-50"
+            className="fixed w-screen h-screen flex items-center justify-center bg-gray-100 backdrop-blur-lg z-50"
         >
-            {/* Language Switcher positioned at the bottom left on small screens */}
-            <div className="fixed left-6 bottom-20 md:right-6 md:left-auto">
-                <LanguageSwitcher/>
-            </div>
-
             {/* Main Disclaimer Box */}
             <div
-                className="bg-white px-6 pb-20 md:pb-5 pt-5 flex flex-col justify-between w-full h-screen md:h-auto md:w-3/4 shadow-2xl rounded-lg"
-            >
-                <div>
-                    <h1 className="text-lg md:text-xl text-lightGray font-bold mb-4">{t('disclaimer.title')}</h1>
-                    <p className="text-xs md:text-lg text-lightGray mb-4">{t('disclaimer.text')}</p>
-                </div>
+                className="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl md:max-h-[80vh] md:h-auto h-screen overflow-auto md:w-11/12 lg:w-9/12 xl:w-3/4 relative">
+                <h1 className="text-2xl font-bold text-center text-gray-700 mb-5">
+                    {t('disclaimer.title')}
+                </h1>
+                <p className="text-sm text-gray-600 mb-6">
+                    {t('disclaimer.text')}
+                </p>
 
                 {/* Accept Button */}
-                <div className="flex justify-end">
-                    <TextButton text={t('disclaimer.accept')} onClick={handleAccept}/>
+                <div className="flex justify-center">
+                    <TextButton text={t('disclaimer.accept')} onClick={handleAccept} className="w-full"/>
+                </div>
+
+                {/* Language Switcher positioned at the bottom right */}
+                <div className="md:fixed mb-10 md:mb-0 md:right-4 md:border-t-0 border-t-[1px] flex justify-center pt-5 md:bottom-4">
+                    <LanguageSwitcher/>
                 </div>
             </div>
         </motion.div>

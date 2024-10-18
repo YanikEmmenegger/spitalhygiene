@@ -5,6 +5,7 @@ import Disclaimer from "./components/Disclaimer.tsx";
 import Navigation from "./components/Navigation.tsx";
 import NavigationButton from "./components/NavigationButton.tsx";
 import Header from "./components/Header.tsx";
+import AuthProvider from "./components/Auth/AuthProvider.tsx";
 
 function App() {
     // State for toggling navigation visibility
@@ -36,37 +37,39 @@ function App() {
 
     return (
         <>
-            {/* Button to toggle navigation visibility */}
-            <NavigationButton
-                isSmallScreen={isSmallScreen}
-                isNavVisible={isNavVisible}
-                toggleNav={() => setNavVisible(!isNavVisible)}
-            />
+            <AuthProvider>
+                {/* Button to toggle navigation visibility */}
+                <NavigationButton
+                    isSmallScreen={isSmallScreen}
+                    isNavVisible={isNavVisible}
+                    toggleNav={() => setNavVisible(!isNavVisible)}
+                />
 
-            {/* Disclaimer component */}
-            <Disclaimer/>
+                {/* Disclaimer component */}
+                <Disclaimer/>
 
-            {/* Main container: flex layout with full screen height */}
-            <div className="flex flex-col h-screen">
-                {/* Logo/Header component */}
-                <Header/>
+                {/* Main container: flex layout with full screen height */}
+                <div className="flex flex-col h-screen">
+                    {/* Logo/Header component */}
+                    <Header/>
 
-                <div className="flex flex-1 w-full overflow-hidden relative">
-                    {/* Main Content: Adjusts width based on navigation visibility */}
-                    <div
-                        className={`transition-all duration-300 ease-in-out ${isNavVisible ? 'w-full lg:w-3/4' : 'w-full'} flex-1`}
-                    >
-                        <EmbeddedApp/>
+                    <div className="flex flex-1 w-full overflow-hidden relative">
+                        {/* Main Content: Adjusts width based on navigation visibility */}
+                        <div
+                            className={`transition-all duration-300 ease-in-out ${isNavVisible ? 'w-full lg:w-3/4' : 'w-full'} flex-1`}
+                        >
+                            <EmbeddedApp/>
+                        </div>
+
+                        {/* Navigation Component */}
+                        <Navigation
+                            toggleNav={() => setNavVisible(!isNavVisible)}
+                            isSmallScreen={isSmallScreen}
+                            isNavVisible={isNavVisible}
+                        />
                     </div>
-
-                    {/* Navigation Component */}
-                    <Navigation
-                        toggleNav={() => setNavVisible(!isNavVisible)}
-                        isSmallScreen={isSmallScreen}
-                        isNavVisible={isNavVisible}
-                    />
                 </div>
-            </div>
+            </AuthProvider>
         </>
     );
 }

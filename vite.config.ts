@@ -4,5 +4,4 @@ import react from '@vitejs/plugin-react';
 // Update the base path to your deployment path
 export default defineConfig({
     plugins: [react()],
-    base: '/chat/', // Set the base path for your application
 });

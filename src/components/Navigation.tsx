@@ -4,6 +4,9 @@ import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import {useTranslation} from "react-i18next";
 import NavigationLink from "./NavigationLink.tsx";
 import TextButton from "./TextButton.tsx";
+import {AuthService} from "./Auth/AuthService.ts";
+
+
 
 interface NavigationProps {
     isNavVisible: boolean;
@@ -61,8 +64,9 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
                 </div>
 
                 {/* Language switcher at the bottom */}
-                <div className="ml-10 mb-5 text-center">
+                <div className="mx-10 mb-5 flex items-center justify-between">
                     <LanguageSwitcher/>
+                    <TextButton text="Logout" onClick={()=>{AuthService.logout()}} className="mt-5"/>
                 </div>
             </motion.div>
         </motion.div>
