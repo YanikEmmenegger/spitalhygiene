@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 import {FaSpinner} from 'react-icons/fa';
-import {twMerge} from 'tailwind-merge';
 import {useTranslation} from 'react-i18next';
 import Cookies from 'js-cookie'; // Import js-cookie for cookie management
+import {motion} from 'framer-motion'; // Import motion for animations
 
 const EmbeddedApp = () => {
     const [isLoading, setIsLoading] = useState(true); // State to track loading status
@@ -24,10 +24,9 @@ const EmbeddedApp = () => {
     }, []);
 
     const handleIframeLoad = () => {
-        setIsIframeLoaded(true); // Mark iframe as loaded
         setTimeout(() => {
-            setIsLoading(false); // Hide loading spinner after 1 second delay
-        }, 1000);
+            setIsIframeLoaded(true); // Set iframe loaded state to true
+        }, 1000); // Delay to ensure iframe is fully loaded
     };
 
     return (
@@ -44,13 +43,20 @@ const EmbeddedApp = () => {
 
             {/* Render iframe only if cookie exists */}
             {!isLoading && (
-                <iframe
-                    title="Embedded Application"
-                    className={twMerge("w-full flex-1 overflow-auto", isIframeLoaded ? "opacity-100" : "opacity-0")} // Occupies full width and the remaining height
-                    allowFullScreen={true}
-                    onLoad={handleIframeLoad} // Update loading state when iframe loads
-                    src="http://localhost:8501" // Make sure to include a valid source URL
-                ></iframe>
+                <motion.div
+                    initial={{opacity: 0}} // Start with 0 opacity
+                    animate={{opacity: isIframeLoaded ? 1 : 0}} // Animate to full opacity when loaded
+                    transition={{duration: 1}} // Duration of the fade-in effect
+                    className="w-full flex-1 overflow-auto"
+                >
+                    <iframe
+                        title="Embedded Application"
+                        className="w-full h-full" // Set width and height for the iframe
+                        allowFullScreen={true}
+                        onLoad={handleIframeLoad} // Update loading state when iframe loads
+                        src="http://localhost:8501" // Make sure to include a valid source URL
+                    ></iframe>
+                </motion.div>
             )}
         </div>
     );
