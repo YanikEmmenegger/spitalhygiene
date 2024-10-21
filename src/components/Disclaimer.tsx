@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import TextButton from './TextButton.tsx';
-import LanguageSwitcher from './LanguageSwitcher.tsx';
+import LanguageSwitcher from './Languages/LanguageSwitcher.tsx';
 import {motion} from 'framer-motion';
 import Cookies from 'js-cookie'; // Import js-cookie
 

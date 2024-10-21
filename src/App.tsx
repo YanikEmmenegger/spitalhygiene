@@ -2,8 +2,8 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import EmbeddedApp from "./components/EmbeddedApp.tsx";
 import Disclaimer from "./components/Disclaimer.tsx";
-import Navigation from "./components/Navigation.tsx";
-import NavigationButton from "./components/NavigationButton.tsx";
+import Navigation from "./components/Navigation/Navigation.tsx";
+import NavigationButton from "./components/Navigation/NavigationButton.tsx";
 import Header from "./components/Header.tsx";
 import AuthProvider from "./components/Auth/AuthProvider.tsx";
 

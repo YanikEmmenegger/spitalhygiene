@@ -1,10 +1,10 @@
 import {motion} from 'framer-motion';
 import {twMerge} from 'tailwind-merge';
-import LanguageSwitcher from "./LanguageSwitcher.tsx";
+import LanguageSwitcher from "../Languages/LanguageSwitcher.tsx";
 import {useTranslation} from "react-i18next";
 import NavigationLink from "./NavigationLink.tsx";
-import TextButton from "./TextButton.tsx";
-import {AuthService} from "./Auth/AuthService.ts";
+import TextButton from "../TextButton.tsx";
+import {AuthService} from "../Auth/AuthService.ts";
 
 
 
@@ -66,7 +66,7 @@ const Navigation: React.FC<NavigationProps> = ({isNavVisible, isSmallScreen, tog
                 {/* Language switcher at the bottom */}
                 <div className="mx-10 mb-5 flex items-center justify-between">
                     <LanguageSwitcher/>
-                    <TextButton text="Logout" onClick={()=>{AuthService.logout()}} className="mt-5"/>
+                    <TextButton text="Logout" onClick={()=>{AuthService.logout()}} className=""/>
                 </div>
             </motion.div>
         </motion.div>

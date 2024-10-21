@@ -1,35 +1,63 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
 import TextButton from "../TextButton.tsx";
 import {AuthService} from "./AuthService.ts";
-import LanguageSwitcher from "../LanguageSwitcher.tsx";
-// Reusing your styled button
+import LanguageSwitcher from "../Languages/LanguageSwitcher.tsx";
 
 const LoginForm = () => {
     const {t} = useTranslation();
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-    // Email validator that checks if the email ends with "@insel.ch"
+    // Get allowed domains from Vite environment variables
+    const validDomains = JSON.parse(import.meta.env.VITE_ALLOWED_DOMAINS);
+
+    useEffect(() => {
+        // Get the hash from the URL
+        const hash = window.location.hash;
+
+        if (hash) {
+            // Remove the leading "#" and split by "&" to get individual parameters
+            const params = new URLSearchParams(hash.slice(1));
+
+            // Extract error details
+            const error = params.get("error") || "";
+            const errorCode = params.get("error_code") || "";
+            const errorDescription = params.get("error_description") || "";
+
+            console.error(`Error code: ${errorCode}, Error description: ${errorDescription}`);
+            if (error) {
+                setError(t("login.error"));
+            }
+        }
+    }, []);
+
+    // Email validator that checks if the email is in a valid format and belongs to a valid domain
     const validateEmail = (email: string) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const domainRegex = /@insel\.ch$/;
         if (!emailRegex.test(email.toLowerCase())) {
             return t("login.invalid_email");
         }
-        if (!domainRegex.test(email.toLowerCase())) {
+
+        // Extract the domain from the email
+        const domain = email.split("@")[1];
+        if (!validDomains.includes(domain)) {
             return t("login.invalid_domain");
         }
+
         return "";
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const validationError = validateEmail(email);
+        setLoading(true);
 
         if (validationError) {
             setError(validationError);
+            setLoading(false);
             return;
         }
 
@@ -40,12 +68,13 @@ const LoginForm = () => {
         } else {
             setError(t("login.magic_link_error"));
         }
+        setLoading(false);
     };
 
     return (
-        <div className="flex flex-col gap-10 items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col -mt-10 gap-10 items-center justify-center min-h-screen">
             <img
-                src="Logo.svg" // Just use the path without /chat
+                src={import.meta.env.BASE_URL + "/Logo.svg"}
                 alt="Inselspital Logo"
                 className="h-12 w-auto"
             />
@@ -68,19 +97,17 @@ const LoginForm = () => {
                             placeholder={t("login.email_placeholder")}
                             required
                         />
-                        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                     </div>
 
                     <div className="flex justify-center">
-                        <TextButton text={t("login.button_text")} onClick={() => {
+                        <TextButton text={loading ? t('login.loading') : t("login.button_text")} onClick={() => {
                         }} className="w-full"/>
                     </div>
                 </form>
-
+                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                 {message && <p className="text-green-500 text-center mt-4">{message}</p>}
             </div>
-            <div
-                className="fixed right-4 bottom-4">
+            <div className="fixed right-4 bottom-4">
                 <LanguageSwitcher/>
             </div>
         </div>

@@ -1,5 +1,5 @@
-import { FC, ReactNode, useEffect, useState } from "react";
-import { AuthService } from "./AuthService";
+import {FC, ReactNode, useEffect, useState} from "react";
+import {AuthService} from "./AuthService";
 import LoginForm from "./LoginForm.tsx";
 import supabase from "../../utils/supabase.ts";
 import {CookieService} from "./CookieService.ts";
@@ -8,28 +8,32 @@ interface LoginProviderProps {
     children: ReactNode;
 }
 
-const AuthProvider: FC<LoginProviderProps> = ({ children }) => {
+const AuthProvider: FC<LoginProviderProps> = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
         const checkAuth = async () => {
             const session = await AuthService.checkSession();
+            const cookieExists = CookieService.getCookie();
 
-            if (session) {
+            if (session && cookieExists) {
                 // Set the cookie only for Streamlit to access
                 await CookieService.setCookie(session.access_token);
                 setIsAuthenticated(true);
             } else {
-                // Destroy cookie if no session exists
-                await CookieService.destroyCookie()
+                // Destroy cookie if no session exists or the cookie is missing
+                await CookieService.destroyCookie();
                 setIsAuthenticated(false);
+
+                // Log out from Supabase if cookie is missing or session is invalid
+                await supabase.auth.signOut();
             }
         };
 
         checkAuth();
 
         // Listen to authentication state changes
-        const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
+        const {data: authListener} = supabase.auth.onAuthStateChange(async (event, session) => {
             console.log("Auth event:", event);
             if (session) {
                 // Set the cookie only for Streamlit to access
@@ -48,7 +52,7 @@ const AuthProvider: FC<LoginProviderProps> = ({ children }) => {
         };
     }, []);
 
-    return <>{isAuthenticated ? children : <LoginForm />}</>;
+    return <>{isAuthenticated ? children : <LoginForm/>}</>;
 };
 
 export default AuthProvider;

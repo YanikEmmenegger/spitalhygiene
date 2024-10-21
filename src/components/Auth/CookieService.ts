@@ -6,11 +6,15 @@ export const CookieService = {
     setCookie(token: string) {
         Cookies.set(COOKIE_NAME, token, {
             secure: true,
-            httpOnly: true,
-            sameSite: 'strict',
+            //httpOnly: true,
+            sameSite: 'Strict',
             path: '/',
             expires: 30 // 30 days
         });
+    },
+
+    getCookie() {
+        return Cookies.get(COOKIE_NAME) || false;
     },
 
     destroyCookie() {

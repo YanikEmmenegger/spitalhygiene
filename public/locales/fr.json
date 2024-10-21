@@ -35,6 +35,8 @@
     "invalid_email": "Veuillez entrer une adresse email valide.",
     "invalid_domain": "Veuillez utiliser votre adresse email @insel.ch.",
     "magic_link_sent": "Le lien de connexion a été envoyé à votre adresse email.",
-    "magic_link_error": "Erreur lors de l'envoi du lien de connexion. Veuillez réessayer plus tard."
+    "magic_link_error": "Erreur lors de l'envoi du lien de connexion. Veuillez réessayer plus tard.",
+    "loading": "L'email est en cours d'envoi...",
+    "error": "Erreur de connexion. Veuillez réessayer plus tard."
   }
 }

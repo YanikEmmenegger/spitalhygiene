@@ -35,7 +35,9 @@
     "invalid_email": "Bitte geben Sie eine gültige Email Addresse ein.",
     "invalid_domain": "Bitte verwenden Sie Ihre @insel.ch Email Addresse.",
     "magic_link_sent": "Anmelde-Link wurde an Ihre Email Addresse gesendet.",
-    "magic_link_error": "Fehler beim Senden des Anmelde-Links. Bitte versuchen Sie es später erneut."
+    "magic_link_error": "Fehler beim Senden des Anmelde-Links. Bitte versuchen Sie es später erneut.",
+    "loading": "Email wird gesendet...",
+    "error": "Fehler beim Anmelden. Bitte versuchen Sie es später erneut."
   }
 }
 

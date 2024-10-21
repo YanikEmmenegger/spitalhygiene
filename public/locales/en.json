@@ -35,6 +35,8 @@
     "invalid_email": "Please enter a valid email address.",
     "invalid_domain": "Please use your @insel.ch email address.",
     "magic_link_sent": "Magic link has been sent to your email address.",
-    "magic_link_error": "Error sending the magic link. Please try again later."
+    "magic_link_error": "Error sending the magic link. Please try again later.",
+    "loading": "Email is being sent...",
+    "error": "Error logging in. Please try again later."
   }
 }
