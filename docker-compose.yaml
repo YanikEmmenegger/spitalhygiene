@@ -1,30 +1,31 @@
-version: '3.8'
 
 services:
-  react-app:
+
+  react:
     build:
-      context: ./react
-      dockerfile: Dockerfile
-    ports:
-      - "4173" # Exposed internally but not accessible directly
-    expose:
-      - "4173" # Allows Nginx to access it within the Docker network
+      context: .
+      dockerfile: ./react/Dockerfile
+    # No ports exposed
+    depends_on:
+      - mongodb
     networks:
-      - app-network
+      - internal
 
   nginx:
-    image: nginx:latest
+    build: ./nginx
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - /etc/letsencrypt:/etc/letsencrypt # Ensure Certbot files are mapped correctly
+      - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
-      - react-app
+      - react
     networks:
-      - app-network
+      - internal
+      - external
 
 networks:
-  app-network:
-    driver: bridge
+  internal:
+    internal: true
+  external:
+    external: false
