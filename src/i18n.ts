@@ -16,14 +16,8 @@ if (storedLanguage) {
     // Use saved language from cookies if available
     lng = storedLanguage;
 } else {
-    // Detect the user's browser or device language
-    // const userLanguage = navigator.language || navigator.languages[0];
-    // const languageCode = userLanguage.split('-')[0];
-
-    // Set default language to German ('de') if the user's language is not supported
-    //  lng = supportedLanguages.includes(languageCode) ? languageCode : 'de';
-
-    lng = 'de'; // Set default language to German ('de')
+    // Use default language if no saved language is found
+    lng = import.meta.env.VITE_DEFAULT_LANGUAGE || 'de';
 }
 
 i18n
@@ -34,7 +28,7 @@ i18n
         fallbackLng: 'de',
         supportedLngs: supportedLanguages,
         backend: {
-            loadPath: 'locales/{{lng}}.json',
+            loadPath: import.meta.env.BASE_URL+'/locales/{{lng}}.json',
         },
         interpolation: {
             escapeValue: false, // React already escapes by default

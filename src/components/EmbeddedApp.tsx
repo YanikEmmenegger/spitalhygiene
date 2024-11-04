@@ -54,7 +54,7 @@ const EmbeddedApp = () => {
                         className="w-full h-full" // Set width and height for the iframe
                         allowFullScreen={true}
                         onLoad={handleIframeLoad} // Update loading state when iframe loads
-                        src="http://localhost:8501" // Make sure to include a valid source URL
+                        src={import.meta.env.VITE_EMBEDDED_APP_URL} // Make sure to include a valid source URL
                     ></iframe>
                 </motion.div>
             )}

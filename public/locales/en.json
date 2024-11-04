@@ -1,30 +1,42 @@
 {
   "loading": "Loading application...",
   "disclaimer": {
-    "title": "Disclaimer - English",
-    "text": "The information provided by this chatbot is for informational purposes only. The chatbot is an automated system and provides responses based on the questions entered and the available data.\n\nPlease note the following points:\n\nNo professional advice: The information provided by the chatbot does not replace professional advice, whether legal, medical, financial, or otherwise. For specific concerns, you should consult qualified professionals.\n\nNo warranty: Although we strive to provide accurate and up-to-date information, we cannot guarantee the completeness, accuracy, or timeliness of the content provided.\n\nUse at your own risk: Use of the information and responses you receive from this chatbot is at your own risk. We are not liable for any losses or damages resulting from the use of or reliance on the information provided.\n\nPrivacy: Please note that personal data you enter into the chat may be stored or processed. Read our privacy policy to learn more about how we handle your data.\n\nBy using this chatbot, you agree to these terms.",
+    "title": "Disclaimer",
+    "text": "The information provided by this chatbot is for informational purposes only. The chatbot is an automated system and provides answers based on the questions entered and the available data.\n\nPlease note the following points:\n\nNo professional advice: The chatbot's information does not replace professional advice, whether legal, medical, financial, or otherwise. For specific concerns, you should consult qualified professionals.\n\nNo warranty: While we strive to provide accurate and up-to-date information, we cannot guarantee the completeness, accuracy, or timeliness of the provided content.\n\nUse at your own risk: Use of the information and answers provided by this chatbot is at your own risk. We are not liable for any loss or damage arising from the use or reliance on the provided information.\n\nPrivacy: Please note that personal data you enter into the chat may be stored or processed. Read our privacy policy to learn more about how your data is handled.\n\nBy using this chatbot, you agree to these terms.",
     "accept": "Understood!"
   },
   "navigation": {
-    "text": "This is just a small description, here you could write something about what the chatbot is for and what it is not. This is just a small description, here you could write something about what the chatbot is for and what it is not. This is just a small description, here you could write something about what the chatbot is for and what it is not. This is just a small description, here you could write something about what the chatbot is for and what it is not.",
+    "text": "This is just a small description, here could be a description of what the ChatBot is for and what it is not. This is just a small description, here could be a description of what the ChatBot is for and what it is not.",
     "title": "Useful Links",
     "links": [
       {
         "title": "About Us - Hospital Hygiene",
-        "link": "https://infektiologie.insel.ch/de/ueber-uns/spitalhygiene"
+        "link": "https://infektiologie.insel.ch/en/about-us/hospital-hygiene"
       },
       {
         "title": "Hygiene Folder",
-        "link": "https://qm.insel.ch/hygieneordner/"
+        "link": "https://qm.insel.ch/hygienefolder/"
       },
       {
         "title": "Contact",
         "link": "mailto:spitalhygiene@insel.ch"
       },
       {
-        "title": "Privacy Policy",
-        "link": "https://qm.insel.ch/hygieneordner/"
+        "title": "Data Privacy",
+        "link": "https://qm.insel.ch/hygienefolder/"
       }
     ]
+  },
+  "login": {
+    "title": "Log In",
+    "email_label": "Email Address",
+    "email_placeholder": "Your.Name@insel.ch",
+    "button_text": "Send Magic Link",
+    "invalid_email": "Please enter a valid email address.",
+    "invalid_domain": "Please use your @insel.ch email address.",
+    "magic_link_sent": "Magic link has been sent to your email address.",
+    "magic_link_error": "Error sending the magic link. Please try again later.",
+    "loading": "Email is being sent...",
+    "error": "Error logging in. Please try again later."
   }
 }
