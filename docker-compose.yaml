@@ -21,15 +21,15 @@ services:
       - internal
       - external
 
-  ragchat:
-    image: rag-chatbot
-    networks:
-      - internal
+#  ragchat:
+#    image: rag-chatbot
+#    networks:
+#      - internal
     # run with the following command: streamlit run app.py
-    command: streamlit run app.py --server.baseUrlPath=/chat
+#    command: streamlit run app.py --server.baseUrlPath=/chat
 
-    ports:
-      - "8501:8501"
+#   ports:
+#    - "8501:8501"
 
 
 networks:
