@@ -20,16 +20,15 @@ services:
     networks:
       - internal
       - external
-
-#  ragchat:
-#    image: rag-chatbot
-#    networks:
-#      - internal
-    # run with the following command: streamlit run app.py
-#    command: streamlit run app.py --server.baseUrlPath=/chat
-
-#   ports:
-#    - "8501:8501"
+  #UPDATE
+  ragchat:
+    image: rag-chatbot
+    networks:
+      - internal
+      - external
+    command: streamlit run src/app.py --server.port=8502 --server.address=0.0.0.0 --server.baseUrlPath=/chat
+    ports:
+      - "8502:8502"
 
 
 networks:
