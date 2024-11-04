@@ -4,7 +4,7 @@ const Header = () => {
             <div className="container mx-auto flex items-center h-full"> {/* Vertically center contents */}
                 <div className="flex-1 flex justify-center">
                     <img
-                        src={import.meta.env.BASE_URL+"/Logo.svg"}// Just use the path without /chat
+                        src={"/Logo.svg"}// Just use the path without /chat
                         alt="Inselspital Logo"
                         className="h-12 w-auto"
                     />

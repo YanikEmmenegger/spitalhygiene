@@ -28,7 +28,7 @@ i18n
         fallbackLng: 'de',
         supportedLngs: supportedLanguages,
         backend: {
-            loadPath: import.meta.env.BASE_URL+'/locales/{{lng}}.json',
+            loadPath: '/locales/{{lng}}.json',
         },
         interpolation: {
             escapeValue: false, // React already escapes by default

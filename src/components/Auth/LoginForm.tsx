@@ -74,7 +74,7 @@ const LoginForm = () => {
     return (
         <div className="flex flex-col -mt-10 gap-10 items-center justify-center min-h-screen">
             <img
-                src={import.meta.env.BASE_URL + "/Logo.svg"}
+                src={"/Logo.svg"}
                 alt="Inselspital Logo"
                 className="h-12 w-auto"
             />
