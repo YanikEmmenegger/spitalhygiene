@@ -21,6 +21,17 @@ services:
       - internal
       - external
 
+  ragchat:
+    image: rag-chatbot
+    networks:
+      - internal
+    # run with the following command: streamlit run app.py
+    command: streamlit run app.py
+
+    ports:
+      - "8502:8501"
+
+
 networks:
   internal:
     internal: true
