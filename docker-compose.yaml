@@ -26,7 +26,7 @@ services:
     networks:
       - internal
     # run with the following command: streamlit run app.py
-    command: streamlit run app.py
+    command: streamlit run app.py server.baseUrlPath=/chat
 
     ports:
       - "8502:8501"
