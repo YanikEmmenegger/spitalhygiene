@@ -6,7 +6,7 @@ WORKDIR /app
 COPY ./react/package*.json ./
 RUN npm install
 
-COPY . .
+COPY ./react .
 RUN npm run build
 
 EXPOSE 4173
