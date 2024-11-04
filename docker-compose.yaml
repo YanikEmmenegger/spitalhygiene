@@ -5,9 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./react/Dockerfile
-    # No ports exposed
-    depends_on:
-      - mongodb
     networks:
       - internal
 
