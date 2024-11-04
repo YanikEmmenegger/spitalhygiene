@@ -11,4 +11,4 @@ RUN npm run build
 
 EXPOSE 4173
 
-RUN npm run preview
+CMD ["npm", "run", "preview"]
