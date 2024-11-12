@@ -29,13 +29,13 @@ export const AuthService = {
                 email: email,
                 options: {
                     emailRedirectTo: import.meta.env.DEV
-                        ? "http://localhost:5173/chat/"
-                        : import.meta.env.VITE_HOST_URL,
+                        ? "http://localhost:5173"
+                        : "https://infectioncontrol.ch",
                 },
             });
 
             if (error) {
-                console.error("Magic link login error:", error.message);
+                console.error("Magic link login error: ", error);
                 return false;
             }
 
