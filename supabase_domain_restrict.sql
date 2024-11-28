@@ -1,6 +1,6 @@
 BEGIN
     DECLARE
-        allowed_domains text[] := ARRAY['insel.ch', 'example.com', 'anotherdomain.com']; -- Add more domains as needed
+        allowed_domains text[] := ARRAY['insel.ch', 'hotmail.com', 'rolshoven.io']; -- Add more domains as needed
         email_domain text;
     BEGIN
         -- Extract the domain part of the email
