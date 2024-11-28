@@ -37,7 +37,7 @@ const AuthProvider: FC<LoginProviderProps> = ({children}) => {
             console.log("Auth event:", event);
             if (session) {
                 // Set the cookie only for Streamlit to access
-                await CookieService.setCookie(session.access_token);
+                await CookieService.setCookie(session.refresh_token);
                 setIsAuthenticated(true);
             } else {
                 // Clear the cookie when logged out
