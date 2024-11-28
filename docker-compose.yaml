@@ -5,11 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./react/Dockerfile
-    ports:
-      - "5173:5173"
-    networks:
-      - internal
-      - external
     environment:
       VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
       VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
@@ -17,7 +12,8 @@ services:
       VITE_DEFAULT_LANGUAGE: ${VITE_DEFAULT_LANGUAGE}
       VITE_ALLOWED_DOMAINS: ${VITE_ALLOWED_DOMAINS}
       VITE_EMBEDDED_APP_URL: ${VITE_EMBEDDED_APP_URL}
-
+    networks:
+      - internal
 
   nginx:
     build: ./nginx
